@@ -22,6 +22,9 @@ Then you can call:
 ## DB schema
 Database schema can be found [here](https://dbdiagram.io/d/631b18440911f91ba570e59c)
 
+## Architecture diagram
+![Screenshot]([screenshot.png](https://imgur.com/a/Ues2LlW))
+
 
 ## API design
 
