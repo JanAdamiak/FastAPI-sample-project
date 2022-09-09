@@ -22,8 +22,12 @@ class RegionalOffice(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String)
     location = Column(String)
-    token_identification_to_change_name = Column(String)
     is_active = Column(Boolean, default=True)
+    last_login: Column(DateTime(timezone=True))
+    username: str
+    password: str
+    client_id: str
+    client_secret: str
 
 
 class Purchase(Base):

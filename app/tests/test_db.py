@@ -12,8 +12,9 @@ class TestCrudCommands:
         purchase_object = create_purchase(session, purchase_schema)
         assert not purchase_object
 
+
     def test_purchase_creation(self, session):
-        regional_office_schema = RegionalOfficeCreate(name="test office", location="here", token_identification_to_change_name="sdlkgjhrwsogh45e9iuth9375v8yq6983qu98y49836yq9c349y8c594832yqc")
+        regional_office_schema = RegionalOfficeCreate(name="test office", location="here", username='testuser', password="sdlkgjhrwsogh45e9iuth9375v8yq6983qu98y49836yq9c349y8c594832yqc")
         regional_office = create_regional_office(session, regional_office_schema)
 
         assert regional_office
@@ -38,7 +39,7 @@ class TestCrudCommands:
 
 
     def test_purchase_update(self, session):
-        regional_office_schema = RegionalOfficeCreate(name="test office", location="here", token_identification_to_change_name="sdlkgjhrwsogh45e9iuth9375v8yq6983qu98y49836yq9c349y8c594832yqc")
+        regional_office_schema = RegionalOfficeCreate(name="test office", location="here", username='testuser', password="sdlkgjhrwsogh45e9iuth9375v8yq6983qu98y49836yq9c349y8c594832yqc")
         regional_office = create_regional_office(session, regional_office_schema)
 
         assert regional_office

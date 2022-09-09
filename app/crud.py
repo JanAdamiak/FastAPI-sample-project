@@ -24,7 +24,7 @@ def create_purchase(db: Session, purchase: PurchaseCreate):
 def update_purchase(db: Session, purchase_id: int, purchase: PurchaseUpdate):
     db_purchase = get_purchase_by_id(db, purchase_id)
     if not db_purchase:
-        return
+        return None
 
     # Checks for state changes
     if db_purchase.state != purchase.state:
@@ -40,8 +40,12 @@ def update_purchase(db: Session, purchase_id: int, purchase: PurchaseUpdate):
     return db_purchase
 
 
+def get_purchase_by_external_order_number_and_regional_office(db: Session, purchase: PurchaseCreate):
+    return db.query(Purchase).filter(Purchase.regional_office == purchase.regional_office, Purchase.external_order_number == purchase.external_order_number).first()
+
+
 def get_unmanufactured_purchases_by_brand(db: Session, brand: Purchase.BrandOfCar):
-    return (db.query(Purchase).filter(Purchase.state == Purchase.StateOfPurchase.ORDER_PAID,Purchase.brand == brand,).all())
+    return (db.query(Purchase).filter(Purchase.state == Purchase.StateOfPurchase.ORDER_PAID, Purchase.brand == brand).all())
 
 
 def create_regional_office(db: Session, regional_office: RegionalOfficeCreate):

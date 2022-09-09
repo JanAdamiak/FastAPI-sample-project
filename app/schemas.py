@@ -1,14 +1,14 @@
 from datetime import datetime
 from pydantic import BaseModel
 
-from .models import Purchase
+from .models import Purchase as PurchaseModel
 
 
 class PurchaseBase(BaseModel):
     regional_office: int
     external_order_number: str
     car_model: str
-    brand: Purchase.BrandOfCar
+    brand: PurchaseModel.BrandOfCar
 
 
 class PurchaseCreate(PurchaseBase):
@@ -16,12 +16,12 @@ class PurchaseCreate(PurchaseBase):
 
 
 class PurchaseUpdate(BaseModel):
-    state: Purchase.StateOfPurchase
+    state: PurchaseModel.StateOfPurchase
 
 
 class Purchase(PurchaseBase):
     id: int
-    state: Purchase.StateOfPurchase
+    state: PurchaseModel.StateOfPurchase
     time_created: datetime = None
     timestamp_manufacturing_started: datetime = None
     timestamp_order_fulfilled: datetime = None
@@ -33,16 +33,17 @@ class Purchase(PurchaseBase):
 class RegionalOfficeBase(BaseModel):
     name: str
     location: str
-    token_identification_to_change_name: str
     is_active: bool = True
+    username: str
 
 
 class RegionalOfficeCreate(RegionalOfficeBase):
-    pass
+    password: str
 
 
 class RegionalOffice(RegionalOfficeBase):
     id: int
+    last_login: datetime = datetime.utcnow()
 
     class Config:
         orm_mode = True
