@@ -28,7 +28,7 @@ Database schema can be found [here](https://dbdiagram.io/d/631b18440911f91ba570e
 
 ## API design
 
-At a high level, we need the following three APIs:
+At a high level, we need the following APIs:
 
 #### POST /v1/sales-webhook
 Spawn a purchase task for the paid order to be added to our database.
