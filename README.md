@@ -4,7 +4,7 @@ I will additionally try to pick-up a few more technologies in this project.
 All of them will be listed below.
 
 ## Running the project
-To run the project locally you have to [install Docker on your machine] (https://docs.docker.com/get-docker/).
+To run the project locally you have to [install Docker on your machine](https://docs.docker.com/get-docker/).
 
 Then you can try building the Docker image by using:
 `sudo docker build . -t myapp`
@@ -20,7 +20,7 @@ Then you can call:
 `pytest`
 
 ## DB schema
-Database schema can be found [here] (https://dbdiagram.io/d/631b18440911f91ba570e59c)
+Database schema can be found [here](https://dbdiagram.io/d/631b18440911f91ba570e59c)
 
 
 ## API design
