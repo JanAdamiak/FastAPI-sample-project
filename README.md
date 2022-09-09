@@ -23,7 +23,7 @@ Then you can call:
 Database schema can be found [here](https://dbdiagram.io/d/631b18440911f91ba570e59c)
 
 ## Architecture diagram
-![Screenshot]([screenshot.png](https://imgur.com/a/Ues2LlW))
+![Screenshot](https://i.imgur.com/MqSDfCZ.png)
 
 
 ## API design
